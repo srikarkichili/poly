@@ -160,11 +160,13 @@ class LinkedList:
                 exp = present.exp + now.exp
                 final.insert_term(coeff, exp)
                 now = now.next
-                current = current.next
+            current = current.next
         return final
 
     # Return a string representation of the polynomial.
     def __str__(self):
+        if self.head is None:
+            return ""
         represent = []
         present = self.head
         while present:
@@ -187,7 +189,7 @@ def main():
         if each == "":
             break
         everything.append(each)
-    a = int(set[0])
+    a = int(everything[0])
     b = LinkedList()
     for i in range(1, a + 1):
         lists = everything[i].split()
@@ -208,3 +210,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
