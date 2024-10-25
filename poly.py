@@ -1,3 +1,4 @@
+
 """
 Student information for this assignment:
 
@@ -168,10 +169,13 @@ def main():
     """function defining how to make the outputs"""
     everything = []
     while True:
-        each = input().strip()
-        if each == "":
+        try:
+            each = input().strip()
+            if each == "":
+                break
+            everything.append(each)
+        except:
             break
-        everything.append(each)
     a = int(everything[0])
     b = LinkedList()
     for i in range(1, a + 1):
@@ -181,11 +185,35 @@ def main():
         b.insert_term(coeff, exp)
     c = int(everything[a + 1])
     d = LinkedList()
-    for i in range(a + 2, a + 2 + c):
+    for i in range(1, a + 1):
         lists = everything[i].split()
         coeff = int(lists[0])
         exp = int(lists[1])
-        d.insert_term(coeff, exp)
+        b.insert_term(coeff, exp)
+    
+    if a + 1 < len(everything):
+        c = int(everything[a + 1])
+    else:
+        c = 0
+    
+    d = LinkedList()
+
+    for i in range(a+2, a+2+c):
+       if i < len(everything):
+           lists = everything[i].split()
+           coeff = int(lists[0])
+           exp = int(lists[1])
+           d.insert_term(coeff, exp)
+
+    sum_polynomial = b.add(d)
+    product_polynomial = b.mult(d)
+
+    print(sum_polynomial)
+    print(product_polynomial)
+        
+    
+    
+    
     sum_polynomial = b.add(d)
     product_polynomial = b.mult(d)
     print(sum_polynomial)
