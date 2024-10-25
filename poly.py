@@ -160,7 +160,7 @@ class LinkedList:
                 exp = present.exp + now.exp
                 final.insert_term(coeff, exp)
                 now = now.next
-            current = current.next
+            present = present.next
         return final
 
     # Return a string representation of the polynomial.
@@ -210,4 +210,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
