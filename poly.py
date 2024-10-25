@@ -169,10 +169,10 @@ def main():
     """function defining how to make the outputs"""
     everything = []
     while True:
-            each = input().strip()
-            if each == "":
-                break
-            everything.append(each)
+        each = input().strip()
+        if each == "":
+            break
+        everything.append(each)
     a = int(everything[0])
     b = LinkedList()
     for i in range(1, a + 1):
