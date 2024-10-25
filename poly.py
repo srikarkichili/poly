@@ -95,23 +95,13 @@ class Node:
         """
         return f"({self.coeff}, {self.exp})"
 
-
 class LinkedList:
+    """class defining LinkedList"""
     def __init__(self):
-        # You are also welcome to use a sentinel/dummy node!
-        # It is definitely recommended, which will we learn more
-        # about in class on Monday 10/21. If you choose to use
-        # a dummy node, you can comment out the self.head = None
-        # and comment in the below line. We use None to make sure
-        # if there is an error where you accidentally include the
-        # dummy node in your calculation, it will throw an error.
-        # self.dummy = Node(None, None)
         self.head = None
 
-    # Insert the term with the coefficient coeff and exponent exp into the polynomial.
-    # If a term with that exponent already exists, add the coefficients together.
-    # You must keep the terms in descending order by exponent.
     def insert_term(self, coeff, exp):
+        """function defining how to insert term"""
         if coeff == 0:
             return
         new_node = Node(coeff, exp)
@@ -136,8 +126,8 @@ class LinkedList:
         if past:
             past.next = new_node
 
-    # Add a polynomial p to the polynomial and return the resulting polynomial as a new linked list.
     def add(self, p):
+        """function defining how to add"""
         final = LinkedList()
         present = self.head
         while present:
@@ -149,8 +139,8 @@ class LinkedList:
             present = present.next
         return final
 
-    # Multiply a polynomial p with the polynomial and return the product as a new linked list.
     def mult(self, p):
+        """function defining how to multiply"""
         final = LinkedList()
         present = self.head
         while present:
@@ -163,7 +153,6 @@ class LinkedList:
             present = present.next
         return final
 
-    # Return a string representation of the polynomial.
     def __str__(self):
         if self.head is None:
             return ""
@@ -176,13 +165,7 @@ class LinkedList:
 
 
 def main():
-    # read data from stdin using input() and create polynomial p
-
-    # read data from stdin using input() and create polynomial q
-
-    # get sum of p and q as a new linked list and print sum
-
-    # get product of p and q as a new linked list and print product
+    """function defining how to make the outputs"""
     everything = []
     while True:
         each = input().strip()
