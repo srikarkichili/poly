@@ -196,17 +196,20 @@ def main():
         coeff = int(lists[0])
         exp = int(lists[1])
         b.insert_term(coeff, exp)
-    c = int(everything[a + 1])
-    d = LinkedList()
-    for i in range(a + 2, a + 2 + c):
-        lists = everything[i].split()
-        coeff = int(lists[0])
-        exp = int(lists[1])
-        d.insert_term(coeff, exp)
-    sum_polynomial = b.add(d)
-    product_polynomial = b.mult(d)
-    print(sum_polynomial)
-    print(product_polynomial)
+    if a + 1 < len(everything):
+        c = int(everything[a + 1])
+        d = LinkedList()
+        for i in range(a + 2, a + 2 + c):
+            lists = everything[i].split()
+            coeff = int(lists[0])
+            exp = int(lists[1])
+            d.insert_term(coeff, exp)
+        sum_polynomial = b.add(d)
+        product_polynomial = b.mult(d)
+        print(sum_polynomial)
+        print(product_polynomial)
+    else:
+        return
 
 if __name__ == "__main__":
     main()
