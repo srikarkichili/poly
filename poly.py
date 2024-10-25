@@ -180,10 +180,9 @@ def main():
         coeff = int(lists[0])
         exp = int(lists[1])
         b.insert_term(coeff, exp)
+    c = 0
     if a + 1 < len(everything):
-        c = int(everything[a + 1])
-    else:
-        c=0
+        c = int(everything[a+1])
     d = LinkedList()
     for i in range(a + 2, a + 2 + c):
         if i < len(everything):
